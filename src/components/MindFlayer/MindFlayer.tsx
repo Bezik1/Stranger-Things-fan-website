@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from 'react'
 import { OrbitControls } from "@react-three/drei"
 import { Canvas, useLoader, useThree } from "@react-three/fiber"
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader"
-import { MeshBasicMaterial, Vector3, Color } from "three"
+import { Vector3, Color, MeshPhongMaterial } from "three"
 import gsap from 'gsap'
 
 import urlBuildings from '../../assets/buildings.png'
@@ -14,7 +14,7 @@ import { MODELS_URLS } from "../../constans/constans"
 import './MindFlayer.css'
 
 const MindFlayer = () =>{
-    const [clicked, click] = useState(true)
+    const [clicked, click] = useState(false)
 
     const fleshRef = useRef(null!)
     const shadowRef = useRef(null!)
@@ -61,6 +61,7 @@ const MindFlayer = () =>{
             <div className="mind-flayer" ref={MFRef} onClick={() => click(!clicked)}>
                 <Canvas>
                     <Object />
+                    <pointLight color="violet" intensity={100} position={[0, 0, 0]} /> 
                     <OrbitControls target={[0, -20, 0]} enableRotate={false} />
                 </Canvas>
                 <img src={urlBuildings} className="mind-flayer-img" alt="mind-flayer-img"/>
@@ -86,7 +87,7 @@ const Object = () =>{
     const { urlMF } = MODELS_URLS
     const obj = useLoader(OBJLoader, urlMF)
     obj.children.forEach((mesh : any) => {
-        mesh.material = new MeshBasicMaterial({color: new Color('#000')}) 
+        mesh.material = new MeshPhongMaterial({color: new Color('#000')}) 
     })
 
     return <primitive object={obj} rotation={[-0.65 , Math.PI - 0.47, 0]} position={[0, -20, 0]} scale={[0.75, 0.75, 0.75]}/>

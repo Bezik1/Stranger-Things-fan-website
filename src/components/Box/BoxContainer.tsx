@@ -8,8 +8,8 @@ import { Ref, Uniform } from '../../interfaces/interfaces'
 import { Arrows, TEXTURE_URLS } from '../../constans/constans'
 
 import Box from './Box'
-import AnimationShader from '../Animations/AnimationShader'
-import Arrow from '../Arrow/Arrow';
+import AnimationShader from './AnimationShader'
+import Arrow from './Arrow';
 
 import './BoxContainer.css'
 
