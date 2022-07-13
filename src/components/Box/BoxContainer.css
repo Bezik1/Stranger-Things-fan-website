@@ -1,0 +1,42 @@
+.arrow-right{
+    z-index: 2;
+    color: #a9a9a9;
+    position: absolute;
+    top: 400px;
+    left: 70%;
+    background-color: transparent;
+    border: none;
+    transition: 1s;
+  }
+  
+  .arrow-right:hover{
+    transform: translateY(-10px);
+    cursor: pointer;
+    transition: 1s;
+  }
+  
+  .arrow-left{
+    z-index: 2;
+    position: absolute;
+    top: 400px;
+    left: 22%;
+    background-color: transparent;
+    border: none;
+    transition: 1s;
+  }
+  
+  .arrow-left:hover{
+    color: #fff;
+    transform: translateY(-10px);
+    cursor: pointer;
+    transition: 1s;
+  }
+  
+  .canvas {
+    z-index: 2;
+    position: absolute;
+    top: 550px;
+    width: 100%;
+    height: 900px;
+    text-align: center;
+  }

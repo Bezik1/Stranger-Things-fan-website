@@ -1,0 +1,66 @@
+.vecna-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    top: 1600px;
+    width: 100%;
+    height: 800px;
+    background: linear-gradient(transparent, #710202, #710202, transparent);
+}
+
+.spider{
+    z-index: 0;
+    top: 140px;
+    right: 60px;
+    position: absolute;
+}
+
+.vecna-container > .vecna {
+    z-index: 3;
+    width: 60%;
+    height: 90%;
+}
+
+.vecna-container > .vecna:hover {
+    cursor: pointer;
+}
+
+.vecna-info {
+    z-index: 2;
+    font-size: 20px;
+    margin-top: 200px;
+    color: #ff0000;
+    width: 50%;
+    height: auto;
+}
+
+.vecna-info h1{
+    font-size: 3em;
+    margin-right: 250px;
+    animation: pulsate 1s infinite alternate;   
+}
+
+@keyframes pulsate {
+    0%{
+        text-shadow:
+            0 0 2px #ff0000,
+            0 0 4px #ff0000,
+            0 0 6px #ff0000,
+            0 0 40px #ff0000,
+            0 0 80px #ff0000,
+            0 0 90px #ff0000,
+            0 0 100px #ff0000,
+            0 0 150px #ff0000;
+    }
+    100%{
+        text-shadow:
+            0 0 2px #ff0000,
+            0 0 4px #ff0000,
+            0 0 6px #ff0000,
+            0 0 10px #ff0000,
+            0 0 45px #ff0000,
+            0 0 55px #ff0000,
+            0 0 80px #ff0000;
+    }
+}
