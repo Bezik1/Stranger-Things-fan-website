@@ -8,6 +8,7 @@ import urlSpider from '../../assets/widow.png'
 
 import './Vecna.css'
 import { Mesh } from 'three';
+import { MODELS_URLS } from '../../constans/constans';
 
 const Vecna = () =>{
     const vecnaRef = useRef(null!)
@@ -40,7 +41,7 @@ const Vecna = () =>{
                     </Canvas>
             </div>
             <div className='vecna-info'>
-                <h1>Vecna / 001</h1>
+                <h1 className='vecna-info-header'>Vecna / 001</h1>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
                 <br/><br/>
                 nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
@@ -53,7 +54,8 @@ const Object = () =>{
     const [clicked, click] = useState(false)
     const vecnaRef = useRef<Mesh>(null!)
 
-    const obj = useLoader(OBJLoader, './Vecna.obj')
+    const { urlVecna } = MODELS_URLS
+    const obj = useLoader(OBJLoader, urlVecna)
     const { camera } = useThree()
 
     camera.position.x = 15

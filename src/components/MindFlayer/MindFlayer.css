@@ -1,0 +1,94 @@
+.mind-flayer-container {
+    top: 3900px;
+    position: absolute;
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(transparent, #3d2039, #3d2039, transparent);
+}
+
+.mind-flayer-container > .mind-flayer {
+    cursor: pointer;
+    z-index: 1;
+    width: 75%;
+    margin-left: 10%;
+    height: 100%;
+}
+
+.mind-flayer-info {
+    z-index: -2;
+    width: 100%;
+    left: 0;
+    height: 450px;
+    text-align: center;
+    position: absolute;
+    top: 400px;
+    background: linear-gradient( #202020, #202020,  transparent);
+    backdrop-filter: blur(20px);
+    color: #fff;
+}
+
+.mind-flayer-header{
+    animation: animation infinite 2s;
+}
+
+.mind-flayer-img {
+    width: 100%;
+    height: 400px;
+    z-index: -2;
+    left: 0;
+    position: absolute;
+    top: 40px;
+}
+
+.mind-flayer-text {
+    margin-top: 40px;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.mind-flayer-shadow {
+    opacity: 0;
+    z-index: -1;
+    top: 340px;
+    right: 70px;
+    position: absolute;
+    width: 300px;
+    height: 150px;
+}
+
+.mind-flayer-flesh {
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+    top: 290px;
+    left: 50px;
+    width: 400px;
+    height: 200px;
+}
+
+@keyframes animation {
+    0%{
+        text-shadow:
+            0 0 2px #fff,
+            0 0 4px #fff,
+            0 0 6px #fff,
+            0 0 40px #fff,
+            0 0 80px #fff,
+            0 0 90px #fff,
+            0 0 100px #fff,
+            0 0 150px #fff;
+    }
+    100%{
+        text-shadow:
+            0 0 2px #fff,
+            0 0 4px #fff,
+            0 0 6px #fff,
+            0 0 10px #fff,
+            0 0 45px #fff,
+            0 0 55px #fff,
+            0 0 80px #fff;
+    }
+}
+

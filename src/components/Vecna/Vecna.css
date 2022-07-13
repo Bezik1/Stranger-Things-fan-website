@@ -35,10 +35,10 @@
     height: auto;
 }
 
-.vecna-info h1{
+.vecna-info-header {
     font-size: 3em;
     margin-right: 250px;
-    animation: pulsate 1s infinite alternate;   
+    animation: pulsate 1s infinite;   
 }
 
 @keyframes pulsate {

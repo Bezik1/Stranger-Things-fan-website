@@ -1,6 +1,7 @@
 import { Vector3 } from "@react-three/fiber";
 import React from "react";
-import { ShaderMaterial, Mesh, PlaneGeometry } from "three";
+import { ShaderMaterial, Mesh, PlaneGeometry, MeshBasicMaterial } from "three";
+import * as THREE from 'three'
 
 export interface BoxProps {
     position: Vector3,
