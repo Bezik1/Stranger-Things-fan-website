@@ -10,6 +10,7 @@ import urlFlesh from '../../assets/flesh.png'
 import urlShadow from '../../assets/shadow.webp'
 
 import { MODELS_URLS } from "../../constans/constans"
+import { MeshChildren } from '../../interfaces/interfaces'
 
 import './MindFlayer.css'
 
@@ -58,10 +59,12 @@ const MindFlayer = () =>{
 
     return (
         <div className="mind-flayer-container" ref={MFCRef}>
-            <div className="mind-flayer" ref={MFRef} onClick={() => click(!clicked)}>
+            <div className="mind-flayer" ref={MFRef} >
                 <Canvas>
-                    <Object />
+                    <Object onClick={click} clicked={clicked} />
                     <pointLight color="violet" intensity={100} position={[0, 0, 0]} /> 
+                    <pointLight color="violet" intensity={100} position={[0, 0, -30]} /> 
+                    <pointLight color="violet" intensity={100} position={[0, -30, 0]} /> 
                     <OrbitControls target={[0, -20, 0]} enableRotate={false} />
                 </Canvas>
                 <img src={urlBuildings} className="mind-flayer-img" alt="mind-flayer-img"/>
@@ -80,7 +83,7 @@ const MindFlayer = () =>{
     )
 }
 
-const Object = () =>{
+const Object = ({ onClick, clicked } : {  onClick: React.Dispatch<React.SetStateAction<boolean>>, clicked: boolean }) =>{
     const { camera } = useThree()
     camera.lookAt(new Vector3(0, -20, -20))
 
@@ -90,7 +93,7 @@ const Object = () =>{
         mesh.material = new MeshPhongMaterial({color: new Color('#000')}) 
     })
 
-    return <primitive object={obj} rotation={[-0.65 , Math.PI - 0.47, 0]} position={[0, -20, 0]} scale={[0.75, 0.75, 0.75]}/>
+    return <primitive onClick={() => onClick(!clicked)} object={obj} rotation={[-0.65 , Math.PI - 0.47, 0]} position={[0, -20, 0]} scale={[0.75, 0.75, 0.75]}/>
 }
 
 export default MindFlayer

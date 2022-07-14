@@ -1,5 +1,5 @@
 .App {
-  background: linear-gradient( #110090, #040021, #000 100%);
+  background: linear-gradient( #1a03c9, #000, #000, #000 100%);
   backdrop-filter: blur(200px);
   height: 5000px;
 }

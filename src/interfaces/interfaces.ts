@@ -28,3 +28,7 @@ interface WaveMaterial extends ShaderMaterial {
 export interface Uniform extends Mesh<PlaneGeometry, WaveMaterial> {}
 
 export interface Ref<T> extends React.MutableRefObject<T> {}
+
+export interface MeshChildren extends THREE.Object3D<Event> {
+    material: THREE.MeshPhongMaterial
+}
