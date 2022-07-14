@@ -1,5 +1,5 @@
-import { useRef, useEffect } from 'react'
-import { Canvas, useLoader } from '@react-three/fiber'
+import { useRef, useEffect, useState } from 'react'
+import { Canvas, useFrame, useLoader } from '@react-three/fiber'
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import { OrbitControls } from '@react-three/drei'
 import { Color, MeshPhongMaterial } from 'three'
@@ -10,6 +10,7 @@ import { MODELS_URLS } from '../../constans/constans'
 import './Demogorgon.css'
 
 const Demogorgon = () =>{
+    const [pos, setPos] = useState<number[]>(null!)
     const DEMOref = useRef(null!)
 
     useEffect(() =>{
@@ -28,7 +29,7 @@ const Demogorgon = () =>{
       }, [] )
 
     return (
-        <div className="demogorgon-container" ref={DEMOref}>
+        <div className="demogorgon-container" ref={DEMOref} onPointerMove={(e: any) => setPos([e.clientX, e.clientY])}>
             <div className='demogorgon-text'>
                 <h1 className="demogorgon-header">Demogorgon</h1>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -39,20 +40,24 @@ const Demogorgon = () =>{
                 <Canvas>
                     <pointLight color={new Color('#6c9ab8')} intensity={100} position={[-10, -10, -10]} /> 
                     <pointLight color={new Color('#6c9ab8')} intensity={100} position={[0, 10, -10]} /> 
-                    <pointLight color={new Color('#250202')} intensity={100} position={[0, 0, 0]} /> 
                     <pointLight color={new Color('#6c9ab8')} intensity={100} position={[10, 10, 10]} /> 
                     <ambientLight />
-                    <Object />
-                    <OrbitControls autoRotate={true} />
+                    <Object pos={pos} />
+                    <OrbitControls />
                 </Canvas>
             </div>
         </div>
     )
 }
 
-const Object = () =>{
+const Object = ({ pos } : { pos: number[] }) =>{
     const { urlDemo } = MODELS_URLS
     const obj = useLoader(OBJLoader, urlDemo)
+
+  useFrame(() =>{ 
+    obj.rotation.x = (pos[1] - 200) / 2000
+    obj.rotation.y = (pos[0] - 1000) / 2000
+  })
 
     obj.children.forEach((mesh : any) => 
         mesh.material = new MeshPhongMaterial({color: new Color('#000')}) )
