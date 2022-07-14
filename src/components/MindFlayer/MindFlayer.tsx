@@ -55,7 +55,7 @@ const MindFlayer = () =>{
     return (
         <div className="mind-flayer-container" ref={MFCRef}>
             <div className="mind-flayer" ref={MFRef} >
-                <Scene click={() => click} clicked={clicked} />
+                <Scene click={click} clicked={clicked} />
                 <img src={urlBuildings} className="mind-flayer-img" alt="mind-flayer-img"/>
                 <img ref={fleshRef} src={urlFlesh} className="mind-flayer-flesh" alt='flesh-monster' />
                 <img ref={shadowRef} src={urlShadow} className="mind-flayer-shadow" alt='flesh-monster' />
