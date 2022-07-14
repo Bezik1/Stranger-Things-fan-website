@@ -64,9 +64,9 @@ const Object = () =>{
     
     useFrame(() => {
         if(clicked){
-            vecnaRef.current.rotation.y += 0.0 
+            vecnaRef.current.rotation.y += 0.01 
         } else {
-            vecnaRef.current.rotation.y += 0.01
+            vecnaRef.current.rotation.y += 0.00
         }
     })
 

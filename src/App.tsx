@@ -1,12 +1,14 @@
+import { Suspense } from 'react';
+
+import Loading from './components/Loading/Loading';
 import Background from './components/Background/Background';
 import BoxContainer from './components/Box/BoxContainer'
 import Vecna from  './components/Vecna/Vecna'
-import Demogorgon from './components/Demogorgon/Demogorgon';
+import WillsDrawings from './components/WillsDrawings/WillsDrawings';
 import MindFlayer from './components/MindFlayer/MindFlayer';
+import Demogorgon from './components/Demogorgon/Demogorgon';
 
 import './App.css';
-import { Suspense } from 'react';
-import Loading from './components/Loading/Loading';
 
 const App = () => {
 
@@ -16,8 +18,9 @@ const App = () => {
           <Background />
           <BoxContainer />
           <Vecna />
-          <Demogorgon />
+          <WillsDrawings />
           <MindFlayer />
+          <Demogorgon />
         </Suspense>
       </div>
     )

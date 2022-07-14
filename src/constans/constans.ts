@@ -11,5 +11,6 @@ export enum TEXTURE_URLS {
 
 export enum MODELS_URLS {
     urlVecna = 'Vecna.obj',
-    urlMF = 'MindFlayer.obj'
+    urlMF = 'MindFlayer.obj',
+    urlDemo = 'Demogorgon.obj'
 }

@@ -10,7 +10,6 @@ import urlFlesh from '../../assets/flesh.png'
 import urlShadow from '../../assets/shadow.webp'
 
 import { MODELS_URLS } from "../../constans/constans"
-import { MeshChildren } from '../../interfaces/interfaces'
 
 import './MindFlayer.css'
 
@@ -41,20 +40,20 @@ const MindFlayer = () =>{
 
         if(clicked){
             tl.to(fleshRef.current, {
+                scale: 0,
+                opacity: 0
+            }).to(shadowRef.current, {
+                scale: 0,
+                opacity: 0
+            })
+        } else {
+            tl.to(fleshRef.current, {
                 scale: 1,
                 opacity: 1
             }).to(shadowRef.current, {
                 scale: 1,
                 opacity: 1
             })
-        } else {
-            tl.to(fleshRef.current, {
-                scale: 0.1,
-                opacity: 0
-            }).to(shadowRef.current, {
-                scale: 0.1,
-                opacity: 0
-            })  
         }
 
     return (
