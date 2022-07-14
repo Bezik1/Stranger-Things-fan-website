@@ -28,3 +28,9 @@ interface WaveMaterial extends ShaderMaterial {
 export interface Uniform extends Mesh<PlaneGeometry, WaveMaterial> {}
 
 export interface Ref<T> extends React.MutableRefObject<T> {}
+
+export interface DemoProps {
+    pos: number[],
+    click: React.Dispatch<React.SetStateAction<boolean>>,
+    clicked: boolean
+}

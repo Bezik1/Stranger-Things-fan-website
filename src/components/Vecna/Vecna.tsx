@@ -1,14 +1,10 @@
-import { useState, useEffect, useRef } from 'react';
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
-import { Canvas, useLoader, useThree, useFrame } from '@react-three/fiber';
-import { OrbitControls } from "@react-three/drei";
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 import urlSpider from '../../assets/widow.png'
+import Scene from './Scene'
 
 import './Vecna.css'
-import { Mesh } from 'three';
-import { MODELS_URLS } from '../../constans/constans';
 
 const Vecna = () =>{
     const vecnaRef = useRef(null!)
@@ -32,13 +28,7 @@ const Vecna = () =>{
         <div className='vecna-container' ref={vecnaRef}>
             <img alt='spider' className='spider' src={urlSpider} />
             <div className='vecna'>
-                    <Canvas>
-                        <Object />
-                        <ambientLight color='black'/>
-                        <pointLight color="red" intensity={0.5} position={[10, 10, 10]} /> 
-                        <pointLight color="red" intensity={1} position={[-10, -10, -10]} /> 
-                        <OrbitControls target={[0, 15 ,0]}  enableRotate={false} />
-                    </Canvas>
+               <Scene />
             </div>
             <div className='vecna-info'>
                 <h1 className='vecna-info-header'>Vecna / 001</h1>
@@ -48,30 +38,6 @@ const Vecna = () =>{
             </div>
         </div>
     )
-}
-
-const Object = () =>{
-    const [clicked, click] = useState(false)
-    const vecnaRef = useRef<Mesh>(null!)
-
-    const { urlVecna } = MODELS_URLS
-    const obj = useLoader(OBJLoader, urlVecna)
-    const { camera } = useThree()
-
-    camera.position.x = 15
-    camera.position.z = 5
-    camera.position.y = 17
-    
-    useFrame(() => {
-        if(clicked){
-            vecnaRef.current.rotation.y += 0.01 
-        } else {
-            vecnaRef.current.rotation.y += 0.00
-        }
-    })
-
-    return <primitive onClick={() => click(!clicked)} ref={vecnaRef} object={obj} />
-    
 }
 
 export default Vecna

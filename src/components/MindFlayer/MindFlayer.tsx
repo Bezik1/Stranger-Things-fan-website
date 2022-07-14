@@ -1,15 +1,11 @@
 import { useRef, useState, useEffect } from 'react'
-import { OrbitControls } from "@react-three/drei"
-import { Canvas, useLoader, useThree } from "@react-three/fiber"
-import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader"
-import { Vector3, Color, MeshPhongMaterial } from "three"
 import gsap from 'gsap'
 
 import urlBuildings from '../../assets/buildings.png'
 import urlFlesh from '../../assets/flesh.png'
 import urlShadow from '../../assets/shadow.webp'
 
-import { MODELS_URLS } from "../../constans/constans"
+import Scene from './Scene'
 
 import './MindFlayer.css'
 
@@ -59,13 +55,7 @@ const MindFlayer = () =>{
     return (
         <div className="mind-flayer-container" ref={MFCRef}>
             <div className="mind-flayer" ref={MFRef} >
-                <Canvas>
-                    <Object onClick={click} clicked={clicked} />
-                    <pointLight color="violet" intensity={100} position={[0, 0, 0]} /> 
-                    <pointLight color="violet" intensity={100} position={[0, 0, -30]} /> 
-                    <pointLight color="violet" intensity={100} position={[0, -30, 0]} /> 
-                    <OrbitControls target={[0, -20, 0]} enableRotate={false} />
-                </Canvas>
+                <Scene click={() => click} clicked={clicked} />
                 <img src={urlBuildings} className="mind-flayer-img" alt="mind-flayer-img"/>
                 <img ref={fleshRef} src={urlFlesh} className="mind-flayer-flesh" alt='flesh-monster' />
                 <img ref={shadowRef} src={urlShadow} className="mind-flayer-shadow" alt='flesh-monster' />
@@ -80,19 +70,6 @@ const MindFlayer = () =>{
             </div>
         </div>
     )
-}
-
-const Object = ({ onClick, clicked } : {  onClick: React.Dispatch<React.SetStateAction<boolean>>, clicked: boolean }) =>{
-    const { camera } = useThree()
-    camera.lookAt(new Vector3(0, -20, -20))
-
-    const { urlMF } = MODELS_URLS
-    const obj = useLoader(OBJLoader, urlMF)
-    obj.children.forEach((mesh : any) => {
-        mesh.material = new MeshPhongMaterial({color: new Color('#000')}) 
-    })
-
-    return <primitive onClick={() => onClick(!clicked)} object={obj} rotation={[-0.65 , Math.PI - 0.47, 0]} position={[0, -20, 0]} scale={[0.75, 0.75, 0.75]}/>
 }
 
 export default MindFlayer
