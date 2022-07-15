@@ -13,7 +13,7 @@ const Object = ({ pos, clicked, click } : DemoProps) =>{
   useFrame(() =>{ 
     gsap.to(obj.rotation, {
       x: (pos[1] - 200) / 2000,
-      y: (pos[0] - 1200) / 2000,
+      y: (pos[0] - 1400) / 2000,
       duration: 1
     })
     //obj.rotation.x = (pos[1] - 200) / 1000
@@ -21,7 +21,7 @@ const Object = ({ pos, clicked, click } : DemoProps) =>{
   })
   
 
-    obj.children.forEach((mesh : any) => 
+    obj.children && obj.children.forEach((mesh : any) => 
         mesh.material = new MeshPhongMaterial({color: new Color('#000')}) )
 
     return <primitive onClick={() => click(!clicked)} object={obj} />
