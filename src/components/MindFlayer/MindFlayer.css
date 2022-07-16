@@ -50,6 +50,7 @@
 }
 
 .mind-flayer-shadow {
+    filter: grayscale(100%);
     z-index: -1;
     top: 340px;
     right: 70px;
@@ -59,6 +60,7 @@
 }
 
 .mind-flayer-flesh {
+    filter: grayscale(100%);    
     z-index: -1;
     position: absolute;
     top: 290px;

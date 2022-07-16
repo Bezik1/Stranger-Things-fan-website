@@ -1,13 +1,13 @@
 import { useLoader, useFrame } from "@react-three/fiber"
-import { MeshPhongMaterial, Color,  } from "three"
+import { MeshPhongMaterial, Color } from "three"
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader"
 import gsap from "gsap"
 
-import { MODELS_URLS } from "../../constans/constans"
+import { MODELS_URLS } from "../../constans/enums"
 import { DemoProps } from "../../interfaces/interfaces"
 
 const defaultProps  = {
-  pos: [10, 10],
+  pos: [0, 0],
   clicked: false
 }
 
@@ -20,8 +20,8 @@ const Object = (props : DemoProps & typeof defaultProps) =>{
 
   useFrame(() =>{ 
     gsap.to(obj.rotation, {
-      y: (pos[0] - 1400) / 2000 || 0,
-      x: (pos[1] - 200) / 2000 || 0,
+      y: (pos[0] - 1400) / 2000,
+      x: (pos[1] - 200) / 2000,
       duration: 1
     })
   })

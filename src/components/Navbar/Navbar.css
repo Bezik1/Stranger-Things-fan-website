@@ -8,28 +8,38 @@ body {
     z-index: 8;
     position: absolute;
     right: 100px;
-    top: 400px;
+    top: 40px;
     color: #fff;
 }
 
 .nav-link {
-    transition: 1s;
+    transition: 0.5s;
     padding: 10px;
     font-size: 2em;
     text-decoration: none;
     color: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-shadow:
-        0 2px 2px #c38acf,
-        0 4px 4px #c38acf,
-        0 6px 6px #c38acf,
-        0 40px 40px #c38acf,
-        0 80px 80px #c38acf,
-        0 90px 90px #c38acf,
-        0 100px 100px #c38acf,
-        0 150px 150px #c38acf
+    0 0 2px #443aff,
+    0 0 4px #443aff,
+    0 0 6px #443aff,
+    0 0 40px #443aff,
+    0 0 80px #443aff,
+    0 0 90px #443aff,
+    0 0 150px #443aff;
 }
 
 .nav-link:hover {
-    transition: 1s;
-    color: #ffc0cb;
+    transition: 0.5s;
+    text-shadow:
+    0 0 2px #bcb9ff,
+    0 0 4px #bcb9ff,
+    0 0 6px #bcb9ff,
+    0 0 40px #bcb9ff,
+    0 0 80px #bcb9ff,
+    0 0 90px #bcb9ff,
+    0 0 150px #bcb9ff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

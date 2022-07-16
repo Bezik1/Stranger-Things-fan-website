@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import ScrollTrigger  from 'gsap/ScrollTrigger';
 
 import { Ref, Uniform } from '../../interfaces/interfaces'
-import { Arrows, TEXTURE_URLS } from '../../constans/constans'
+import { Arrows, TEXTURE_URLS } from '../../constans/enums'
 
 import Box from './Box'
 import AnimationShader from './AnimationShader'

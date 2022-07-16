@@ -3,7 +3,7 @@ import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader"
 import { Vector3, Color, MeshPhongMaterial } from "three"
 
 
-import { MODELS_URLS } from "../../constans/constans"
+import { MODELS_URLS } from "../../constans/enums"
 
 const Object = ({ click, clicked } : {  click: React.Dispatch<React.SetStateAction<boolean>>, clicked: boolean }) =>{
     const { camera } = useThree()

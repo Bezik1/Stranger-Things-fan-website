@@ -1,5 +1,5 @@
 import gsap from "gsap"
-import { Arrows } from '../../constans/constans'
+import { Arrows } from '../../constans/enums'
 import { Ref, Uniform } from '../../interfaces/interfaces'
 
 import urlArrow from '../../assets/arrow.png'

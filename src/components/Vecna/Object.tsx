@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import { useLoader, useThree, useFrame } from '@react-three/fiber';
 import { Mesh } from 'three';
-import { MODELS_URLS } from '../../constans/constans';
+import { MODELS_URLS } from '../../constans/enums';
 
 const Object = () =>{
     const [clicked, click] = useState(false)
