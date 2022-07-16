@@ -7,7 +7,7 @@ body {
     flex-direction: column;
     z-index: 8;
     position: absolute;
-    right: 100px;
+    right: 50px;
     top: 40px;
     color: #fff;
 }
@@ -21,25 +21,25 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow:
-    0 0 2px #443aff,
-    0 0 4px #443aff,
-    0 0 6px #443aff,
-    0 0 40px #443aff,
-    0 0 80px #443aff,
-    0 0 90px #443aff,
-    0 0 150px #443aff;
+    0 0 2px #ba2a2a,
+    0 0 4px #ba2a2a,
+    0 0 6px #ba2a2a,
+    0 0 40px #ba2a2a,
+    0 0 80px #ba2a2a,
+    0 0 90px #ba2a2a,
+    0 0 150px #ba2a2a;
 }
 
 .nav-link:hover {
     transition: 0.5s;
     text-shadow:
-    0 0 2px #bcb9ff,
-    0 0 4px #bcb9ff,
-    0 0 6px #bcb9ff,
-    0 0 40px #bcb9ff,
-    0 0 80px #bcb9ff,
-    0 0 90px #bcb9ff,
-    0 0 150px #bcb9ff;
+    0 0 2px #ff8181,
+    0 0 4px #ff8181,
+    0 0 6px #ff8181,
+    0 0 40px #ff8181,
+    0 0 80px #ff8181,
+    0 0 90px #ff8181,
+    0 0 150px #ff8181;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }

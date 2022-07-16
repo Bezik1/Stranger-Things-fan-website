@@ -20,13 +20,12 @@ const Object = (props : DemoProps & typeof defaultProps) =>{
 
   useFrame(() =>{ 
     gsap.to(obj.rotation, {
-      y: (pos[0] - 1400) / 2000,
+      y: (pos[0] - 1000) / 2000,
       x: (pos[1] - 200) / 2000,
       duration: 1
     })
   })
   
-
     obj.children && obj.children.forEach((mesh : any) => 
         mesh.material = new MeshPhongMaterial({color: new Color('#000')}) )
 

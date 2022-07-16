@@ -11,7 +11,7 @@ const Scene = ({ clicked, pos, click } : DemoProps) =>{
         <pointLight color={ifClicked(clicked)} intensity={20} position={[0, 0, 10]} /> 
         <pointLight color={ifClicked(clicked)} intensity={100} position={[10, 10, 10]} /> 
         <ambientLight />
-        <Object pos={pos ? pos : [1400, 200]} click={click} clicked={clicked}/>
+        <Object pos={pos ? pos : [1000, 200]} click={click} clicked={clicked}/>
       </Canvas>
     )
 }
