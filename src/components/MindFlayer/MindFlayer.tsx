@@ -53,7 +53,7 @@ const MindFlayer = () =>{
         }
 
     return (
-        <div className="mind-flayer-container" ref={MFCRef}>
+        <div className="mind-flayer-container" ref={MFCRef} id='mf'>
             <div className="mind-flayer" ref={MFRef} >
                 <Scene click={click} clicked={clicked} />
                 <img src={urlBuildings} className="mind-flayer-img" alt="mind-flayer-img"/>

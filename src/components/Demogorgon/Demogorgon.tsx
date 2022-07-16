@@ -6,7 +6,7 @@ import './Demogorgon.css'
 import Scene from './Scene'
 
 const Demogorgon = () =>{
-    const [pos, setPos] = useState<number[]>(null!)
+    const [pos, setPos] = useState<[number, number]>(null!)
     const [clicked, click] = useState(false)
     const DEMOref = useRef(null!)
 
@@ -27,12 +27,13 @@ const Demogorgon = () =>{
 
     return (
         <div 
-          className={clicked ? "demogorgon-container blood-bg" : "demogorgon-container"}
+          className={`demogorgon-container ${clicked ? `blood-bg` : null}`}
+          id='demogorgon'
           ref={DEMOref}
-          onPointerMove={(e: any) => setPos([e.clientX, e.clientY])}
+          onPointerMove={e => setPos([e.clientX, e.clientY])}
          >
-            <div className={clicked ?'demogorgon-text blood' : 'demogorgon-text'}>
-                <h1 className={clicked ? "demogorgon-header blood-header" : "demogorgon-header"}>Demogorgon</h1>
+            <div className={`demogorgon-text ${clicked ? `blood` : null}`}>
+                <h1 className={`demogorgon-header ${clicked ? `blood-header` : null}`}>Demogorgon</h1>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
                 <br/><br/>
                 nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborumLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 

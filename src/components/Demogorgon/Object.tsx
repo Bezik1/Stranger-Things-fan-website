@@ -6,18 +6,24 @@ import gsap from "gsap"
 import { MODELS_URLS } from "../../constans/constans"
 import { DemoProps } from "../../interfaces/interfaces"
 
-const Object = ({ pos, clicked, click } : DemoProps) =>{
+const defaultProps  = {
+  pos: [10, 10],
+  clicked: false
+}
+
+const Object = (props : DemoProps & typeof defaultProps) =>{
+    props = {...defaultProps, ...props}
     const { urlDemo } = MODELS_URLS
     const obj = useLoader(OBJLoader, urlDemo)
 
+    const { pos, clicked, click } = props
+
   useFrame(() =>{ 
     gsap.to(obj.rotation, {
-      x: (pos[1] - 200) / 2000,
-      y: (pos[0] - 1400) / 2000,
+      y: (pos[0] - 1400) / 2000 || 0,
+      x: (pos[1] - 200) / 2000 || 0,
       duration: 1
     })
-    //obj.rotation.x = (pos[1] - 200) / 1000
-    //obj.rotation.y = (pos[0] - 1000) / 2000
   })
   
 
@@ -26,5 +32,7 @@ const Object = ({ pos, clicked, click } : DemoProps) =>{
 
     return <primitive onClick={() => click(!clicked)} object={obj} />
 }
+
+Object.defaultProps = defaultProps
 
 export default Object

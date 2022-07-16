@@ -48,7 +48,7 @@ const BoxContainer = () =>{
       }, [] )
 
       return (
-        <div className='canvas' ref={canvasRef}>
+        <div className='canvas' ref={canvasRef} id='canvas'>
             <Arrow meshRefs={meshRefs} side={right} />
             <Arrow meshRefs={meshRefs} side={left} />
             <Canvas>

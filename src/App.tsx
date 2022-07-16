@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 
 import Loading from './components/Loading/Loading';
+import Navbar from './components/Navbar/Navbar';
 import Background from './components/Background/Background';
 import BoxContainer from './components/Box/BoxContainer'
 import Vecna from  './components/Vecna/Vecna'
@@ -15,6 +16,7 @@ const App = () => {
     return (
       <div className="App">
         <Suspense fallback={ <Loading /> }>
+          <Navbar />
           <Background />
           <BoxContainer />
           <Vecna />

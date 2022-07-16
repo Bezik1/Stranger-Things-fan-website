@@ -30,7 +30,10 @@ export interface Uniform extends Mesh<PlaneGeometry, WaveMaterial> {}
 export interface Ref<T> extends React.MutableRefObject<T> {}
 
 export interface DemoProps {
-    pos: number[],
+    pos: [
+        clientX: number,
+        clientY: number
+    ],
     click: React.Dispatch<React.SetStateAction<boolean>>,
     clicked: boolean
 }

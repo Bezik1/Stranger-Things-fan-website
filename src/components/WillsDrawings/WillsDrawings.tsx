@@ -28,7 +28,7 @@ const WillsDrawings = () =>{
       }, [] )
 
     return (
-        <div className="demo-container" ref={demoRef}>
+        <div className="demo-container" ref={demoRef} id='wd'>
             <img 
               className={clicked2 ? "demo-img-active" : "demo-img"}
               src={urlDemo} 

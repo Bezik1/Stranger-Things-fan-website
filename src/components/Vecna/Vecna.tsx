@@ -25,7 +25,7 @@ const Vecna = () =>{
       }, [] )
 
     return (
-        <div className='vecna-container' ref={vecnaRef}>
+        <div className='vecna-container' ref={vecnaRef} id='vecna'>
             <img alt='spider' className='spider' src={urlSpider} />
             <div className='vecna'>
                <Scene />

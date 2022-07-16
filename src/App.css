@@ -2,4 +2,9 @@
   background: linear-gradient( #1a03c9, #000, #000, #000 100%);
   backdrop-filter: blur(200px);
   height: 6500px;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  scroll-behavior: smooth;
 }
