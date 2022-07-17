@@ -5,7 +5,7 @@ import { Vector3, Color, MeshPhongMaterial } from "three"
 
 import { MODELS_URLS } from "../../constans/enums"
 
-const Object = ({ click, clicked } : {  click: React.Dispatch<React.SetStateAction<boolean>>, clicked: boolean }) =>{
+const Object = () =>{
     const { camera } = useThree()
     camera.lookAt(new Vector3(0, -20, -20))
 
@@ -15,7 +15,7 @@ const Object = ({ click, clicked } : {  click: React.Dispatch<React.SetStateActi
         mesh.material = new MeshPhongMaterial({color: new Color('#000')}) 
     })
 
-    return <primitive onClick={() => click(!clicked)} object={obj} rotation={[-0.65 , Math.PI - 0.47, 0]} position={[0, -20, 0]} scale={[0.75, 0.75, 0.75]}/>
+    return <primitive object={obj} rotation={[-0.65 , Math.PI - 0.47, 0]} position={[0, -20, 0]} scale={[0.75, 0.75, 0.75]}/>
 }
 
 export default Object

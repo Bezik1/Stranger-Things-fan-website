@@ -3,13 +3,18 @@ body {
 }
 
 .nav {
-    display: flex;
-    flex-direction: column;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #070610;
     z-index: 8;
-    position: absolute;
-    right: 50px;
-    top: 40px;
     color: #fff;
+}
+
+.nav-links {
+    padding: 20px;
+    display: block;
+    float: right;
 }
 
 .nav-link {
@@ -18,28 +23,24 @@ body {
     font-size: 2em;
     text-decoration: none;
     color: #fff;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     text-shadow:
-    0 0 2px #ba2a2a,
-    0 0 4px #ba2a2a,
-    0 0 6px #ba2a2a,
-    0 0 40px #ba2a2a,
-    0 0 80px #ba2a2a,
-    0 0 90px #ba2a2a,
-    0 0 150px #ba2a2a;
+    0 0 2px #bbb,
+    0 0 4px #bbb,
+    0 0 6px #bbb,
+    0 0 40px #bbb,
+    0 0 80px #bbb,
+    0 0 90px #bbb,
+    0 0 150px #bbb;
 }
 
 .nav-link:hover {
     transition: 0.5s;
     text-shadow:
-    0 0 2px #ff8181,
-    0 0 4px #ff8181,
-    0 0 6px #ff8181,
-    0 0 40px #ff8181,
-    0 0 80px #ff8181,
-    0 0 90px #ff8181,
-    0 0 150px #ff8181;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    0 0 2px #ffffff,
+    0 0 4px #fff,
+    0 0 6px #fff,
+    0 0 40px #fff,
+    0 0 80px #fff,
+    0 0 90px #fff,
+    0 0 150px #fff;
 }

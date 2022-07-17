@@ -20,7 +20,7 @@ const Object = (props : DemoProps & typeof defaultProps) =>{
 
   useFrame(() =>{ 
     gsap.to(obj.rotation, {
-      y: (pos[0] - 1000) / 2000,
+      y: (pos[0] - 1300) / 2000,
       x: (pos[1] - 200) / 2000,
       duration: 1
     })

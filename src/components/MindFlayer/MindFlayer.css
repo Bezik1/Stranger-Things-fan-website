@@ -9,7 +9,6 @@
 }
 
 .mind-flayer-container > .mind-flayer {
-    cursor: pointer;
     z-index: 1;
     width: 75%;
     margin-left: 10%;
@@ -50,6 +49,7 @@
 }
 
 .mind-flayer-shadow {
+    cursor: pointer;
     transition: 1s;
     filter: grayscale(100%);
     z-index: 1;
@@ -61,6 +61,7 @@
 }
 
 .mind-flayer-flesh {
+    cursor: pointer;
     transition: 1s;
     filter: grayscale(100%);    
     z-index: 1;

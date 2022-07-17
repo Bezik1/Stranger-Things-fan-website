@@ -2,10 +2,10 @@ import { OrbitControls } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
 import Object from './Object'
 
-const Scene = ({ click, clicked } : { click: React.Dispatch<React.SetStateAction<boolean>>, clicked: boolean }) =>{
+const Scene = () =>{
     return (
     <Canvas>
-        <Object click={click} clicked={clicked} />
+        <Object/>
         <pointLight color="violet" intensity={100} position={[0, 0, 0]} /> 
         <pointLight color="violet" intensity={100} position={[0, 0, -30]} /> 
         <pointLight color="violet" intensity={100} position={[0, -30, 0]} /> 

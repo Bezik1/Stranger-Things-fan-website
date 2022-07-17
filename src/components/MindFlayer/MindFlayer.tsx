@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import gsap from 'gsap'
 
 import urlBuildings from '../../assets/buildings.png'
@@ -10,14 +10,10 @@ import Scene from './Scene'
 import './MindFlayer.css'
 
 const MindFlayer = () =>{
-    const [clicked, click] = useState(false)
-
     const fleshRef = useRef(null!)
     const shadowRef = useRef(null!)
     const MFRef = useRef(null!)
     const MFCRef = useRef(null!)
-
-    const tl = gsap.timeline()
 
     useEffect(() =>{
         const tl = gsap.timeline({
@@ -34,28 +30,10 @@ const MindFlayer = () =>{
         })
       }, [] )
 
-        if(clicked){
-            tl.to(fleshRef.current, {
-                scale: 0,
-                opacity: 0
-            }).to(shadowRef.current, {
-                scale: 0,
-                opacity: 0
-            })
-        } else {
-            tl.to(fleshRef.current, {
-                scale: 1,
-                opacity: 1
-            }).to(shadowRef.current, {
-                scale: 1,
-                opacity: 1
-            })
-        }
-
     return (
         <div className="mind-flayer-container" ref={MFCRef} id='mf'>
             <div className="mind-flayer" ref={MFRef} >
-                <Scene click={click} clicked={clicked} />
+                <Scene />
                 <img src={urlBuildings} className="mind-flayer-img" alt="mind-flayer-img"/>
                 <img ref={fleshRef} src={urlFlesh} className="mind-flayer-flesh" alt='flesh-monster' />
                 <img ref={shadowRef} src={urlShadow} className="mind-flayer-shadow" alt='flesh-monster' />
