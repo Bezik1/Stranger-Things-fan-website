@@ -9,6 +9,7 @@
 }
 
 .mind-flayer-container > .mind-flayer {
+    cursor: pointer;
     z-index: 1;
     width: 75%;
     margin-left: 10%;
