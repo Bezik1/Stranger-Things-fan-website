@@ -3,24 +3,26 @@ body {
 }
 
 .nav {
-    position: fixed;
+    filter: opacity(80%);
+    position: sticky;
     top: 0;
     width: 100%;
-    background-color: #070610;
-    z-index: 8;
+    background-color: #141127;
+    z-index: 5;
     color: #fff;
 }
 
 .nav-links {
     padding: 20px;
-    display: block;
-    float: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
 }
 
 .nav-link {
     transition: 0.5s;
     padding: 10px;
-    font-size: 2em;
+    font-size: 25px;
     text-decoration: none;
     color: #fff;
     text-shadow:

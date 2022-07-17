@@ -8,7 +8,7 @@ const Background = () =>{
     const [active, setActive] = useState(false)
 
     return (
-    <div className='bg' onClick={() => setActive(!active)}>
+    <div className='bg' onClick={() => setActive(!active)} id='bg'>
         <div className={active ? 'bg-shadow-active' : 'bg-shadow'} />
         <div className='text'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
