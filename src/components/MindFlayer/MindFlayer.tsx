@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import gsap from 'gsap'
 
 import urlBuildings from '../../assets/buildings.png'
@@ -14,6 +14,11 @@ const MindFlayer = () =>{
     const shadowRef = useRef(null!)
     const MFRef = useRef(null!)
     const MFCRef = useRef(null!)
+    const [pos, setPos] = useState<number[]>([])
+
+    const handleMove = (e: React.PointerEvent<HTMLDivElement>) =>{
+        e.clientX && e.clientY ? setPos([e.clientX - 200, e.clientY - 400]) : setPos([0, 300])
+    }
 
     useEffect(() =>{
         const tl = gsap.timeline({
@@ -31,9 +36,9 @@ const MindFlayer = () =>{
       }, [] )
 
     return (
-        <div className="mind-flayer-container" ref={MFCRef} id='mf'>
+        <div className="mind-flayer-container" ref={MFCRef} id='mf' onPointerMove={e => handleMove(e)}>
             <div className="mind-flayer" ref={MFRef} >
-                <Scene />
+                <Scene pos={pos}/>
                 <img src={urlBuildings} className="mind-flayer-img" alt="mind-flayer-img"/>
                 <img ref={fleshRef} src={urlFlesh} className="mind-flayer-flesh" alt='flesh-monster' />
                 <img ref={shadowRef} src={urlShadow} className="mind-flayer-shadow" alt='flesh-monster' />

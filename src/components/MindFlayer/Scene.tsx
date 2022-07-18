@@ -3,15 +3,9 @@ import { Canvas } from "@react-three/fiber"
 import { useState } from "react"
 import Object from './Object'
 
-const Scene = () =>{
-    const [pos, setPos] = useState<number[]>([])
-
-    const handleMove = (e: React.PointerEvent<HTMLDivElement>) =>{
-        e.clientX && e.clientY ? setPos([e.clientX - 200, e.clientY - 400]) : setPos([0, 300])
-    }
-
+const Scene = ({ pos } : { pos: number[] }) =>{
     return (
-    <Canvas onPointerMove={e => handleMove(e)}>
+    <Canvas>
         <Object/>
         <pointLight color="violet" intensity={100} position={[0 + pos[1], 0 + pos[1], 0 + pos[0]]} /> 
         <pointLight color="violet" intensity={100} position={[0, 0, -30]} /> 
